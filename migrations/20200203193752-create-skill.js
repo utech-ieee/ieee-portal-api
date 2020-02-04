@@ -1,34 +1,29 @@
 'use strict';
 module.exports = {
     up: (queryInterface, Sequelize) => {
-        return queryInterface.createTable('user', {
-            memberId: {
+        return queryInterface.createTable('skill', {
+            skillId: {
                 type: Sequelize.UUID,
                 defaultValue: Sequelize.UUIDV4,
-                allowNull: false,
                 primaryKey: true,
                 onDelete: 'CASCADE',
                 onUpdate: 'CASCADE'
             },
-            fname: {
-                type: Sequelize.STRING(15),
-                allowNull: false
-            },
-            lname: {
-                type: Sequelize.STRING(15),
-                allowNull: false
-            },
-            studentId: {
-                type: Sequelize.STRING(7),
-                allowNull: false
-            },
-            email: {
-                type: Sequelize.STRING,
+            name: {
+                type: Sequelize.STRING(50),
                 allowNull: false,
                 unique: true
             },
-            password: {
-                type: Sequelize.STRING(30),
+            description: {
+                type: Sequelize.STRING,
+                allowNull: true
+            },
+            category: {
+                type: Sequelize.STRING(50),
+                allowNull: false
+            },
+            field: {
+                type: Sequelize.STRING(50),
                 allowNull: false
             },
             createdAt: {
@@ -42,6 +37,6 @@ module.exports = {
         });
     },
     down: (queryInterface, Sequelize) => {
-        return queryInterface.dropTable('user');
+        return queryInterface.dropTable('skill');
     }
 };

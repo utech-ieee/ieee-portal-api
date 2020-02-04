@@ -3,12 +3,12 @@ let db = require('../config/database');
 
 const User = db.define('user', {
     memberId: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
         allowNull: false,
         primaryKey: true,
         onDelete: 'CASCADE',
-        onUpdate: 'CASCADE',
-        autoIncrement: true
+        onUpdate: 'CASCADE'
     },
     fname: {
         type: Sequelize.STRING(15),
