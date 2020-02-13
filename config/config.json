@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "delavago1999",
+    "password": "root123",
     "database": "ieee-portal",
     "host": "127.0.0.1",
     "dialect": "mysql",
