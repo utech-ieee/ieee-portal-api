@@ -20,6 +20,7 @@ let Social = db.define('social', {
             key: 'memberId'
         }
     }
+    
 }, {
     db,
     tableName: 'social',

@@ -25,6 +25,7 @@ module.exports = {
                 allowNull: false,
                 type: Sequelize.DATE
             },
+
             memberId: {
                 type: Sequelize.UUID,
                 defaultValue: Sequelize.UUIDV4,
