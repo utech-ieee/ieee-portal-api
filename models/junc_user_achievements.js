@@ -2,7 +2,7 @@ let Sequelize = require('sequelize');
 let db = require('../config/database');
 
 const junc_user_achievements = db.define('junc_user_achievements', {
-    achievementsId: {
+    junc_user_achievementsId: {
         type: Sequelize.UUID,
         allowNull: false,
         references: {

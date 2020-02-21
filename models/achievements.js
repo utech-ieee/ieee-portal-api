@@ -1,7 +1,7 @@
 let Sequelize = require('sequelize');
 let db = require('../config/database');
 
-const Achievements = db.define('achievements', {
+const Achievements = db.define('achievement', {
     achievementsId: {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
@@ -19,7 +19,7 @@ const Achievements = db.define('achievements', {
     }
 }, {
     db,
-    tableName: 'achievements',
+    tableName: 'achievement',
     timestamps: true
 })
 
