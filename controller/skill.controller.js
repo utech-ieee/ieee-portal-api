@@ -1,8 +1,9 @@
 let Skill = require('../models/skill');
 
 exports.submitSkillData = function(req,res){
+    let skill
     try{
-        let skill = Skill.create({
+        skill = Skill.create({
             name: req.body.name,
             description: req.body.description,
             category: req.body.category,
@@ -20,7 +21,7 @@ exports.submitSkillData = function(req,res){
             success: false,
             message: 'Skill could not be created',
             error: err,
-            // data: skill
+            data: skill
         })
     }
 }

@@ -1,8 +1,9 @@
 let User = require('../models/user');
 
 exports.submitUserData = async(req,res,next) => {
+    let user;
     try{
-        let user = await User.create({
+        user = await User.create({
             fname: req.body.fname,
             lname: req.body.lname,
             studentId: req.body.studentId,
@@ -20,7 +21,7 @@ exports.submitUserData = async(req,res,next) => {
         res.status(500).send({
             success: false,
             error: err,
-            message: 'Error occured when created user record',
+            message: 'Error occured when creating user record',
             data: user
         })
     }

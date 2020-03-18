@@ -1,12 +1,12 @@
 let Sequelize = require('sequelize');
 let fs = require('fs');
 let path = require('path');
+let host = 'localhost'
+let credentialsJSON = JSON.parse(fs.readFileSync(path.resolve(__dirname,'./config.json')));
 
-let jsonData = JSON.parse(fs.readFileSync(path.resolve(__dirname,'./config.json')));
-
-let username = json.development.username;
-let database = json.development.database;
-let password = json.development.password;
+let username = credentialsJSON.development.username;
+let database = credentialsJSON.development.database;
+let password = credentialsJSON.development.password;
 
 
 module.exports = new Sequelize(database, username, password, {
